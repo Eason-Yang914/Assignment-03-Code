@@ -44,7 +44,6 @@ int main() {
 	}
 
 	return 0;
-}
 
 //MY CODE START FROM HERE
 //need to add current input character as variable, char current     
@@ -70,10 +69,10 @@ bool isWon(char current ,char board[][3]){
 		if (board[0][i] == current && board[1][i] == current && board[2][i]){
 			return true;
 		}
-		else
+		else{
 		return false;
-}
-
+		}
+	}
 //Define the method isDraw()
 bool isDraw(char board[][3]){
 	for (int i = 0 ; i<3 ; i++){
@@ -119,6 +118,8 @@ void makeAMove(char board[][3], char current){
 		cin >> column;
 	}
 	board[row][column] = current;
+	}
+
+
+	}
 }
-
-
