@@ -75,8 +75,8 @@ bool isWon(char current ,char board[][3]){
 		}else{
 			return false;
 		}
-	//return 0;
-};
+	}
+
 
 //Define the method isDraw()
 bool isDraw(char board[][3]){
@@ -103,7 +103,7 @@ void displayBoard(char board[][3]){
 		cout << endl;
 	}
 		cout << "-------------"<< endl;
-	
+
 };
 
 //Define the method makeAMove()
