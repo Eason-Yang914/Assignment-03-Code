@@ -44,35 +44,40 @@ int main() {
 	}
 
 	return 0;
+};
 
 //MY CODE START FROM HERE
 //need to add current input character as variable, char current     
 bool isWon(char current ,char board[][3]){
 	for (int i = 0; i < 3; i++){
 		// use if loop to decide in which condition, the player can win
-
-		//traverser win condition
-		if (board[0][0] == current && board[1][1] == current && board[2][2]){
-			return true;
-		}
-
-		if (board[2][0] == current && board[1][1] == current && board[0][2]){
-			return true;
-		}
-
 		//column win condition
-		if (board[i][0] == current && board[i][1] == current && board[i][2]){
+		if (board[i][0] == current && board[i][1] == current && board[i][2] == current){
 			return true;
 		}
 
 		//row win condition
-		if (board[0][i] == current && board[1][i] == current && board[2][i]){
+		if (board[0][i] == current && board[1][i] == current && board[2][i] == current){
 			return true;
 		}
-		else{
-		return false;
-		}
+		
+		
 	}
+
+	//traverser win condition
+		if (board[0][0] == current && board[1][1] == current && board[2][2] == current){
+			return true;
+		}
+		
+		//another traverser win condition
+		if (board[2][0] == current && board[1][1] == current && board[0][2] == current){
+			return true;
+		}else{
+			return false;
+		}
+	//return 0;
+};
+
 //Define the method isDraw()
 bool isDraw(char board[][3]){
 	for (int i = 0 ; i<3 ; i++){
@@ -83,7 +88,7 @@ bool isDraw(char board[][3]){
 		}		
 	}
 	return true;
-}
+};
 
 //Define the function displayBoard
 //using for loop to display basic TicTacToe board
@@ -93,12 +98,13 @@ void displayBoard(char board[][3]){
 	for (int i = 0; i<3; i++){
 		cout << "|";
 		for (int k =0; k<3;k++){
-			cout << " " << board[i][k]<< "|";
+			cout <<" "<< board[i][k]<< "|";
 		}
 		cout << endl;
 	}
-	cout << "-------------" << endl;
-}
+		cout << "-------------"<< endl;
+	
+};
 
 //Define the method makeAMove()
 void makeAMove(char board[][3], char current){
@@ -110,7 +116,7 @@ void makeAMove(char board[][3], char current){
 	cout << "Enter a column (0,1,2) for player" << current << ":"; 
 	cin >> column;
 
-	if (board[row][column]! = ' '){
+	if (board[row][column] != ' '){
 		cout << "This cell is already occupied. Try a different cell" << endl;
 		cout << "Enter a row (0,1,2) for player " << current << ":";
 		cin >> row;
@@ -118,8 +124,4 @@ void makeAMove(char board[][3], char current){
 		cin >> column;
 	}
 	board[row][column] = current;
-	}
-
-
-	}
-}
+};
