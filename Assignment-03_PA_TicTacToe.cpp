@@ -44,6 +44,7 @@ int main() {
 	}
 
 	return 0;
+};
 
 //MY CODE START FROM HERE
 //need to add current input character as variable, char current     
@@ -73,6 +74,9 @@ bool isWon(char current ,char board[][3]){
 		return false;
 		}
 	}
+	return 0;
+};
+
 //Define the method isDraw()
 bool isDraw(char board[][3]){
 	for (int i = 0 ; i<3 ; i++){
@@ -83,7 +87,7 @@ bool isDraw(char board[][3]){
 		}		
 	}
 	return true;
-}
+};
 
 //Define the function displayBoard
 //using for loop to display basic TicTacToe board
@@ -98,7 +102,7 @@ void displayBoard(char board[][3]){
 		cout << endl;
 	}
 	cout << "-------------" << endl;
-}
+};
 
 //Define the method makeAMove()
 void makeAMove(char board[][3], char current){
@@ -110,7 +114,7 @@ void makeAMove(char board[][3], char current){
 	cout << "Enter a column (0,1,2) for player" << current << ":"; 
 	cin >> column;
 
-	if (board[row][column]! = ' '){
+	if (board[row][column] != ' '){
 		cout << "This cell is already occupied. Try a different cell" << endl;
 		cout << "Enter a row (0,1,2) for player " << current << ":";
 		cin >> row;
@@ -118,8 +122,4 @@ void makeAMove(char board[][3], char current){
 		cin >> column;
 	}
 	board[row][column] = current;
-	}
-
-
-	}
-}
+};
